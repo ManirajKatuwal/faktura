@@ -32,16 +32,6 @@ services:
     ports:
       - "8002:8002"
 
-  order-service:
-    build: ./order-service
-    container_name: order-service
-    depends_on:
-      - db
-    environment:
-      DATABASE_URL: postgres://postgres:password@db:5432/mydb
-    ports:
-      - "8003:8003"
-
   api-gateway:
     build: ./api-gateway
     container_name: api-gateway

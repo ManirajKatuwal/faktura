@@ -1,0 +1,35 @@
+from sqlalchemy import Column, Integer, String
+from shared.database import Base
+
+class Item(Base):
+    __tablename__ = "items"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String)
+    description = Column(String)
+    quantity = Column(Integer)
+    location = Column(String)
+    sku = Column(String, unique=True, index=True)
+    supplier = Column(String)
+    price = Column(Integer)
+    category = Column(String)
+    status = Column(String)
+    reorder_level = Column(Integer)
+    expiration_date = Column(String)
+    batch_number = Column(String)
+    warehouse = Column(String)
+    last_updated = Column(String)
+    created_at = Column(String)
+    updated_at = Column(String)
+    tags = Column(String)
+    notes = Column(String)
+    image_url = Column(String)
+    barcode = Column(String, unique=True, index=True)
+    serial_number = Column(String, unique=True, index=True)
+    weight = Column(Integer)
+    dimensions = Column(String)
+    color = Column(String)
+    material = Column(String)
+    manufacturer = Column(String)
+    model_number = Column(String)
+    warranty_period = Column(String)
